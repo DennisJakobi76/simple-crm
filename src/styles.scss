@@ -21,7 +21,7 @@ p {
 
 .mat-drawer-container {
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.06) !important;
+  background-color: rgba(0, 0, 0, 0.08) !important;
 }
 
 .logo-container {
@@ -84,6 +84,15 @@ mat-toolbar {
 }
 
 .router-container {
+  height: calc(100vh - 56px);
+  width: calc(100vw - 300px);
   padding-left: 56px;
   padding-top: 16px;
+  position: relative !important;
+}
+
+.add-user-btn {
+  position: absolute !important;
+  bottom: 56px !important;
+  right: 56px !important;
 }
