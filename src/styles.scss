@@ -8,6 +8,7 @@
     )
   );
 }
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -95,4 +96,8 @@ mat-toolbar {
   position: absolute !important;
   bottom: 56px !important;
   right: 56px !important;
+}
+
+.mr-16 {
+  margin-right: 16px;
 }
