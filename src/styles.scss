@@ -21,11 +21,11 @@ p {
 
 .mat-drawer-container {
   height: 100vh;
-  background-color: lightgray !important;
+  background-color: rgba(0, 0, 0, 0.06) !important;
 }
 
 .logo-container {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.24);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   padding-left: 16px;
   padding-right: 16px;
   display: flex;
@@ -57,7 +57,12 @@ p {
     height: 48px;
 
     &:hover {
-      background-color: rgba(0, 0, 0, 0.1);
+      background-color: rgba(0, 0, 0, 0.04);
+    }
+
+    &:focus {
+      outline: none;
+      background-color: rgba(0, 0, 0, 0.04);
     }
   }
 }
@@ -76,4 +81,9 @@ mat-toolbar {
 .mat-toolbar {
   min-height: 56px !important;
   height: 56px !important;
+}
+
+.router-container {
+  padding-left: 56px;
+  padding-top: 16px;
 }
