@@ -1,0 +1,7 @@
+<h1 mat-dialog-title>Add User</h1>
+<mat-dialog-content>Hier NUTZER HINZUFÜGEN</mat-dialog-content>
+<mat-dialog-actions>
+	<button matButton (click)="cancel()" mat-dialog-close>Cancel</button>
+	<!-- The mat-dialog-close directive optionally accepts a value as a result for the dialog. -->
+	<button matButton (click)="saveUser()" [mat-dialog-close]="true">Save</button>
+</mat-dialog-actions>
