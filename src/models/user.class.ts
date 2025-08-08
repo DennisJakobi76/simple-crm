@@ -9,9 +9,9 @@ export class User {
   constructor(obj?: any) {
     this.firstName = obj?.firstName || '';
     this.lastName = obj?.lastName || '';
-    this.birthDate = obj?.birthDate || 0;
+    this.birthDate = obj?.birthDate || '';
     this.street = obj?.street || '';
-    this.zipCode = obj?.zipCode || 0;
+    this.zipCode = obj?.zipCode || '';
     this.city = obj?.city || '';
   }
 }

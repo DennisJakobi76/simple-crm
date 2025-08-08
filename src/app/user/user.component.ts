@@ -12,6 +12,8 @@ import { DialogAddUserComponent } from '../dialog-add-user/dialog-add-user.compo
   styleUrl: './user.component.scss',
 })
 export class UserComponent implements OnInit {
+  user: User = new User();
+
   constructor(public dialog: MatDialog) {}
 
   ngOnInit() {}
@@ -20,3 +22,4 @@ export class UserComponent implements OnInit {
     const dialogRef = this.dialog.open(DialogAddUserComponent, {});
   }
 }
+import { User } from '../../models/user.class';
