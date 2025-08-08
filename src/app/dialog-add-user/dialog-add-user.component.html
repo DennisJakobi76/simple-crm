@@ -1,3 +1,5 @@
+<mat-progress-bar mode="indeterminate"></mat-progress-bar>
+
 <h1 mat-dialog-title>Add User</h1>
 <mat-dialog-content>
 	<div id="name-container">
@@ -42,6 +44,9 @@
 	</div>
 </mat-dialog-content>
 <mat-dialog-actions>
-	<button matButton (click)="cancel()" mat-dialog-close>Cancel</button>
-	<button matButton (click)="saveUser()" [mat-dialog-close]="true">Save</button>
+	<button mat-button (click)="cancel()" [disabled]="loading">Cancel</button>
+	<button mat-raised-button color="primary" (click)="saveUser()" [disabled]="loading">
+		<span *ngIf="!loading">Save</span>
+		<span *ngIf="loading">Saving...</span>
+	</button>
 </mat-dialog-actions>
