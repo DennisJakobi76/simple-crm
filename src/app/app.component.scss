@@ -3,3 +3,10 @@
   padding-right: 56px;
   padding-top: 16px;
 }
+
+.logo-container {
+  > img {
+    width: 64px;
+    height: auto;
+  }
+}
