@@ -1,11 +1,17 @@
+// Diese Datei wird bei der Entwicklung verwendet
+// Für Produktionsumgebungen verwenden Sie environment.prod.ts
+
 export const environment = {
   production: false,
   firebase: {
-    apiKey: 'AIzaSyCzoDKEuMcmb6FVHRpnk7tGUIXgbKzJXYc',
-    authDomain: 'simple-crm-dd38c.firebaseapp.com',
-    projectId: 'simple-crm-dd38c',
-    storageBucket: 'simple-crm-dd38c.firebasestorage.app',
-    messagingSenderId: '688770884778',
-    appId: '1:688770884778:web:0c3ffcd6e95d1c83229cd3',
+    apiKey: '',
+    authDomain: '',
+    projectId: '',
+    storageBucket: '',
+    messagingSenderId: '',
+    appId: '',
   },
 };
+
+// Wenn Sie lokale Entwicklung machen, erstellen Sie eine environment.local.ts Datei
+// und importieren Sie die Konfiguration von dort
