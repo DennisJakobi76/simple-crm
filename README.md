@@ -2,6 +2,26 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.3.
 
+## Setup für Entwickler
+
+### Firebase-Konfiguration
+
+Dieses Projekt verwendet Firebase. Die Zugangsdaten sind aus Sicherheitsgründen nicht im Repository enthalten.
+
+**Ersteinrichtung:**
+
+1. Kopieren Sie `.env.example` zu `.env`:
+
+   ```bash
+   copy .env.example .env
+   ```
+
+2. Tragen Sie Ihre echten Firebase-Zugangsdaten in die `.env`-Datei ein
+
+3. Kopieren Sie `src/environments/environment.ts` zu `src/environments/environment.local.ts` und tragen Sie dort Ihre Firebase-Konfiguration ein
+
+**Wichtig:** Die Dateien `.env` und `environment.local.ts` sind in `.gitignore` enthalten und werden nicht ins Repository eingecheckt.
+
 ## Development server
 
 To start a local development server, run:
