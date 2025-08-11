@@ -32,3 +32,18 @@
   border-top-right-radius: 0;
   padding-top: 32px;
 }
+
+.user-detail-options {
+  border: none;
+  position: absolute;
+  cursor: pointer;
+  background-color: rgba(243, 242, 245);
+  top: 8px;
+  right: 8px;
+  transition: all 0.3s ease-in-out;
+  border-radius: 50%;
+
+  &:hover {
+    background-color: lightgray !important;
+  }
+}
