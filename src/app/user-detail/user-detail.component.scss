@@ -37,7 +37,7 @@
   border: none;
   position: absolute;
   cursor: pointer;
-  background-color: rgba(243, 242, 245);
+  background-color: transparent !important;
   top: 8px;
   right: 8px;
   transition: all 0.3s ease-in-out;
@@ -45,5 +45,13 @@
 
   &:hover {
     background-color: lightgray !important;
+  }
+}
+
+#user-header-icon {
+  color: white !important;
+
+  &:hover {
+    color: black !important;
   }
 }

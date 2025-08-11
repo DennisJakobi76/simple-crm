@@ -4,10 +4,11 @@ import { ActivatedRoute } from '@angular/router';
 import { User } from '../../models/user.class';
 import { Firestore, doc, getDoc } from '@angular/fire/firestore';
 import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
 
 @Component({
   selector: 'app-user-detail',
-  imports: [MatCardModule, MatIconModule],
+  imports: [MatCardModule, MatIconModule, MatMenuModule],
   templateUrl: './user-detail.component.html',
   styleUrl: './user-detail.component.scss',
 })
@@ -29,8 +30,13 @@ export class UserDetailComponent {
     this.user = userSnap.exists() ? (userSnap.data() as User) : new User();
   }
 
-  openAddressDialog() {
-    // Open address dialog logic here
-    console.log('Open');
+  editAddressMenu() {
+    // Edit menu logic here
+    console.log('Edit');
+  }
+
+  editUserMenu() {
+    // Edit user menu logic here
+    console.log('Edit User');
   }
 }
