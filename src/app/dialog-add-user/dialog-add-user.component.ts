@@ -56,6 +56,7 @@ export class DialogAddUserComponent {
         street: this.user.street,
         zipCode: this.user.zipCode,
         city: this.user.city,
+        email: this.user.email,
       };
       const docRef = await addDoc(usersCollection, userData);
 

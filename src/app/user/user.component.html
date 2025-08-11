@@ -4,18 +4,14 @@
 			<th>Name</th>
 			<th>Street</th>
 			<th>City</th>
+			<th>Email</th>
 		</tr>
-		<tr>
-			<td>John Doe</td>
-			<td>123 Main St</td>
-			<td>Anytown</td>
+		<tr *ngFor="let user of allUsers">
+			<td>{{ user.firstName }} {{ user.lastName}}</td>
+			<td>{{ user.street }}</td>
+			<td>{{ user.zipCode }} {{ user.city }}</td>
+			<td>{{ user.email }}</td>
 		</tr>
-		<tr>
-			<td>John Doe</td>
-			<td>123 Main St</td>
-			<td>Anytown</td>
-		</tr>
-
 	</table>
 </mat-card>
 
