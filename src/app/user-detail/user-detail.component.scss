@@ -6,6 +6,8 @@
   flex-direction: row;
   align-items: flex-end;
   padding: 8px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 
   > img {
     width: 100px;
@@ -23,4 +25,10 @@
   justify-content: center;
   gap: 8px;
   height: 100px;
+}
+
+.user-detail-info {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  padding-top: 32px;
 }
