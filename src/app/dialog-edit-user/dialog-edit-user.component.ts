@@ -45,7 +45,7 @@ export class DialogEditUserComponent implements OnInit {
   }
 
   cancel(): void {
-    this.dialogRef.close();
+    this.dialogRef.close(null);
   }
 
   async saveUser(): Promise<void> {
