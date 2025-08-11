@@ -1,1 +1,31 @@
-<p>dialog-edit-address works!</p>
+<mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+
+<h1 mat-dialog-title>Edit Address</h1>
+<mat-dialog-content>
+	<div id="city-container">
+		<mat-form-field appearance="outline">
+			<mat-label>Street + House No.</mat-label>
+			<input [disabled]="loading" [(ngModel)]="user.street" matInput placeholder="Street + House No.">
+			<!-- <mat-hint>Please enter a Street + House No.</mat-hint> -->
+		</mat-form-field>
+	</div>
+	<div id="zip-city-container">
+		<mat-form-field appearance="outline">
+			<mat-label>Zip-Code</mat-label>
+			<input [disabled]="loading" [(ngModel)]="user.zipCode" matInput placeholder="Zip-Code">
+			<!-- <mat-hint>Please enter a Zip-Code</mat-hint> -->
+		</mat-form-field>
+		<mat-form-field appearance="outline">
+			<mat-label>City</mat-label>
+			<input [disabled]="loading" [(ngModel)]="user.city" matInput placeholder="City">
+			<!-- <mat-hint>Please enter a City</mat-hint> -->
+		</mat-form-field>
+	</div>
+</mat-dialog-content>
+<mat-dialog-actions>
+	<button mat-button [disabled]="loading" (click)="cancel()" [disabled]="loading">Cancel</button>
+	<button mat-raised-button [disabled]="loading" color="primary" (click)="saveUser()" [disabled]="loading">
+		<span *ngIf="!loading">Save</span>
+		<span *ngIf="loading">Saving...</span>
+	</button>
+</mat-dialog-actions>
