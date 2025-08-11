@@ -39,7 +39,8 @@ export class UserDetailComponent {
 
   editAddressMenu() {
     const dialog = this.dialog.open(DialogEditAddressComponent);
-    dialog.componentInstance.user = this.user;
+    // Erstelle eine Kopie des User-Objekts, um Änderungen zu isolieren
+    dialog.componentInstance.user = JSON.parse(JSON.stringify(this.user));
     dialog.componentInstance.userId = this.userId;
 
     dialog.afterClosed().subscribe((result) => {
@@ -52,7 +53,8 @@ export class UserDetailComponent {
 
   editUserMenu() {
     const dialog = this.dialog.open(DialogEditUserComponent);
-    dialog.componentInstance.user = this.user;
+    // Erstelle eine Kopie des User-Objekts, um Änderungen zu isolieren
+    dialog.componentInstance.user = JSON.parse(JSON.stringify(this.user));
     dialog.componentInstance.userId = this.userId;
 
     dialog.afterClosed().subscribe((result) => {
