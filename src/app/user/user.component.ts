@@ -9,6 +9,7 @@ import { Firestore, collection, collectionData } from '@angular/fire/firestore';
 import { User } from '../../models/user.class';
 import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-user',
@@ -18,6 +19,7 @@ import { CommonModule } from '@angular/common';
     MatTooltipModule,
     MatCardModule,
     CommonModule,
+    RouterLink,
   ],
   templateUrl: './user.component.html',
   styleUrl: './user.component.scss',
