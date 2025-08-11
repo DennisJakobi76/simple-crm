@@ -5,6 +5,9 @@ import { User } from '../../models/user.class';
 import { Firestore, doc, getDoc } from '@angular/fire/firestore';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogEditAddressComponent } from '../dialog-edit-address/dialog-edit-address.component';
+import { DialogEditUserComponent } from '../dialog-edit-user/dialog-edit-user.component';
 
 @Component({
   selector: 'app-user-detail',
@@ -16,7 +19,11 @@ export class UserDetailComponent {
   userId = '';
   user: User = new User();
 
-  constructor(private route: ActivatedRoute, private firestore: Firestore) {
+  constructor(
+    private route: ActivatedRoute,
+    private firestore: Firestore,
+    public dialog: MatDialog
+  ) {
     this.route.paramMap.subscribe((params) => {
       this.userId = params.get('id') || '';
       this.getUser();
@@ -31,12 +38,10 @@ export class UserDetailComponent {
   }
 
   editAddressMenu() {
-    // Edit menu logic here
-    console.log('Edit');
+    this.dialog.open(DialogEditAddressComponent);
   }
 
   editUserMenu() {
-    // Edit user menu logic here
-    console.log('Edit User');
+    this.dialog.open(DialogEditUserComponent);
   }
 }
