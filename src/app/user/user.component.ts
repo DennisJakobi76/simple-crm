@@ -5,6 +5,9 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogAddUserComponent } from '../dialog-add-user/dialog-add-user.component';
 import { MatCardModule } from '@angular/material/card';
+import { Firestore, collection, collectionData } from '@angular/fire/firestore';
+import { User } from '../../models/user.class';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-user',
@@ -14,13 +17,20 @@ import { MatCardModule } from '@angular/material/card';
 })
 export class UserComponent implements OnInit {
   user: User = new User();
+  users$!: Observable<any[]>; // Stream der Benutzer
 
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog, private firestore: Firestore) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    const usersCollection = collection(this.firestore, 'users');
+    this.users$ = collectionData(usersCollection, { idField: 'id' });
+
+    this.users$.subscribe((changes) => {
+      console.log('Received changes from DB:', changes);
+    });
+  }
 
   openDialog() {
     const dialogRef = this.dialog.open(DialogAddUserComponent, {});
   }
 }
-import { User } from '../../models/user.class';
