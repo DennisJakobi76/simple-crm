@@ -8,16 +8,24 @@ import { MatCardModule } from '@angular/material/card';
 import { Firestore, collection, collectionData } from '@angular/fire/firestore';
 import { User } from '../../models/user.class';
 import { Observable } from 'rxjs';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-user',
-  imports: [MatIconModule, MatButtonModule, MatTooltipModule, MatCardModule],
+  imports: [
+    MatIconModule,
+    MatButtonModule,
+    MatTooltipModule,
+    MatCardModule,
+    CommonModule,
+  ],
   templateUrl: './user.component.html',
   styleUrl: './user.component.scss',
 })
 export class UserComponent implements OnInit {
   user: User = new User();
   users$!: Observable<any[]>; // Stream der Benutzer
+  allUsers?: any[] = [];
 
   constructor(public dialog: MatDialog, private firestore: Firestore) {}
 
@@ -27,6 +35,7 @@ export class UserComponent implements OnInit {
 
     this.users$.subscribe((changes) => {
       console.log('Received changes from DB:', changes);
+      this.allUsers = changes;
     });
   }
 
