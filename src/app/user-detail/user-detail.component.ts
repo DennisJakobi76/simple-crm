@@ -40,6 +40,14 @@ export class UserDetailComponent {
   editAddressMenu() {
     const dialog = this.dialog.open(DialogEditAddressComponent);
     dialog.componentInstance.user = this.user;
+    dialog.componentInstance.userId = this.userId;
+
+    dialog.afterClosed().subscribe((result) => {
+      if (result) {
+        // User wurde erfolgreich aktualisiert, lade die Daten neu
+        this.getUser();
+      }
+    });
   }
 
   editUserMenu() {
